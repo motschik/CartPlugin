@@ -1,0 +1,12 @@
+name: "MotschikPlugin"
+version: "${project.version}"
+main: "com.motschik.spigotplugin.MotschikPlugin"
+api-version: "1.16"
+
+commands:
+  sp:
+    description: change gamemode to spectator.
+  su:
+    description: change gamemode to survival.
+  message:
+    description: messages.
