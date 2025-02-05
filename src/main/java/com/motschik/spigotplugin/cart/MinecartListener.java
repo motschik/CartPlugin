@@ -12,12 +12,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.vehicle.VehicleMoveEvent;
 import org.bukkit.util.Vector;
-import com.motschik.spigotplugin.MotschikPlugin;
+import com.motschik.spigotplugin.CartPlugin;
 
 public class MinecartListener implements Listener {
-  private final MotschikPlugin plg;
+  private final CartPlugin plg;
 
-  public MinecartListener(MotschikPlugin plg) {
+  public MinecartListener(CartPlugin plg) {
     this.plg = plg;
   }
 
@@ -32,9 +32,9 @@ public class MinecartListener implements Listener {
         String[] lines = ((Sign) sign).getSide(Side.FRONT).getLines();
 
         evaluateLines(minecart, lines);
-        
+
         lines = ((Sign) sign).getSide(Side.BACK).getLines();
-        
+
         evaluateLines(minecart, lines);
       }
 
@@ -42,9 +42,8 @@ public class MinecartListener implements Listener {
   }
 
   private void evaluateLines(RideableMinecart minecart, String[] lines) {
-    if (lines[0].equals("[speedlimit]")
-        || lines[0].equals("[speed limit]")
-            || lines[0].equals("[sl]")) {
+    if (lines[0].equals("[speedlimit]") || lines[0].equals("[speed limit]")
+        || lines[0].equals("[sl]")) {
       double speed = Double.parseDouble(lines[1]);
       minecart.setMaxSpeed(speed);
     }

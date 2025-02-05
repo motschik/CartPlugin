@@ -13,13 +13,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.vehicle.VehicleBlockCollisionEvent;
 import org.bukkit.util.Vector;
-import com.motschik.spigotplugin.MotschikPlugin;
+import com.motschik.spigotplugin.CartPlugin;
 
 public class MinecartArriveListener implements Listener {
-  private final MotschikPlugin plg;
+  private final CartPlugin plg;
   private final StationMessage sm;
 
-  public MinecartArriveListener(MotschikPlugin plg, StationMessage sm) {
+  public MinecartArriveListener(CartPlugin plg, StationMessage sm) {
     this.plg = plg;
     this.sm = sm;
   }

@@ -6,38 +6,38 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
-
-import com.motschik.spigotplugin.MotschikPlugin;
+import com.motschik.spigotplugin.CartPlugin;
 
 public class QuitListener implements Listener {
 
-	private final MotschikPlugin plg;
-	private final TurnPoint tp;
+  private final CartPlugin plg;
+  private final TurnPoint tp;
 
-	/**
-	 * コンストラクタ
-	 * @param plg_ プラグインメインクラスのインスタンス
-	 */
-	public QuitListener(MotschikPlugin plg, TurnPoint tp) {
-		this.plg = plg;
-		this.tp = tp;
-	}
+  /**
+   * コンストラクタ
+   * 
+   * @param plg_ プラグインメインクラスのインスタンス
+   */
+  public QuitListener(CartPlugin plg, TurnPoint tp) {
+    this.plg = plg;
+    this.tp = tp;
+  }
 
-	@EventHandler
-	public void onMinecart(PlayerQuitEvent event) {
+  @EventHandler
+  public void onMinecart(PlayerQuitEvent event) {
 
-		Player player = event.getPlayer();
-		if(player.getGameMode().equals(GameMode.SURVIVAL)) {
-			return;
-		}
-		Location location = player.getCompassTarget();
-		location = tp.getLocation(player);
-		//location.setYaw(player.getLocation().getYaw());
-		//location.setPitch(player.getLocation().getPitch());
-		player.teleport(location);
+    Player player = event.getPlayer();
+    if (player.getGameMode().equals(GameMode.SURVIVAL)) {
+      return;
+    }
+    Location location = player.getCompassTarget();
+    location = tp.getLocation(player);
+    // location.setYaw(player.getLocation().getYaw());
+    // location.setPitch(player.getLocation().getPitch());
+    player.teleport(location);
 
-		player.setGameMode(GameMode.SURVIVAL);
-	}
+    player.setGameMode(GameMode.SURVIVAL);
+  }
 
 
 }
