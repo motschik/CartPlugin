@@ -1,6 +1,6 @@
-name: "MotschikPlugin"
+name: "CartPlugin"
 version: "${project.version}"
-main: "com.motschik.spigotplugin.MotschikPlugin"
+main: "com.motschik.spigotplugin.CartPlugin"
 api-version: "1.16"
 
 commands:
